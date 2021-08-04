@@ -20,26 +20,24 @@
 </div?
 
 <br>
-
-  <div align="center">
-<button type="button" onclick="c()" class="btn btn-success" style="height:300px;width:1000px"> <p style="font-size:80px"> Foto </p> </button>
-  </div>
-  
+ 
    <div align="center" id="1">
 hello this is test
   </div>
 
+  <div align="center">
+<button type="button" onclick="c()" class="btn btn-success" style="height:300px;width:1000px"> <p style="font-size:80px"> Foto </p> </button>
+  </div>
+ 
 
 
 <script>
   
-window.c = function() {
+function c() {
     html2canvas(document.getElementById("1"), {
         onrendered: function (canvas) {
             document.body.appendChild(canvas);
         },
-        width:1000,
-        height:1200
     });
 }
   
