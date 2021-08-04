@@ -28,15 +28,13 @@
 
 <script>
   
-  window.c = function() {
+window.c = function() {
     html2canvas(document.getElementById("cam"), {
         onrendered: function (canvas) {
             document.body.appendChild(canvas);
         },
+      
     });
-  let image = new Image();
-  image.src = canvas.toDataURL("image/jpeg", 1.0);
-  saveAs(image, "hasil.png");
 }
   
 </script>
