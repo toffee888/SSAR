@@ -9,8 +9,8 @@
   <h1> AR </h1>
 </div>
 
-<div align="center">
-<iframe id="cam"
+<div align="center" id="cam">
+<iframe
     title="Inline Frame Example"
     width="800"
     height="1200"
@@ -21,19 +21,18 @@
 <br>
 
   <div align="center">
-<button type="button" onclick="ss()" class="btn btn-success" style="height:300px;width:800px"> <p style="font-size:30px"> Foto </p> </button>
+<button type="button" onclick="c()" class="btn btn-success" style="height:300px;width:800px"> <p style="font-size:30px"> Foto </p> </button>
   </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
 
 <script>
-    
-function ss(){
-     
-var canvas = document.getElementById("cam");
-canvas.toBlob(function(blob) {
-    saveAs(blob, "pretty image.png");
-});
- }
+  
+  function c() {
+  let p = document.getElementById("cam");
+  let image = new Image();
+  image.src = canvas.toDataURL("image/jpeg", 1.0);
+  saveAs(image, "hasil.png");
+}
     
 </script>
