@@ -21,7 +21,7 @@
 
 <br>
 
-  <div align="center">
+  <div align="center" id="1">
 <button type="button" onclick="c()" class="btn btn-success" style="height:300px;width:1000px"> <p style="font-size:80px"> Foto </p> </button>
   </div>
 
@@ -29,7 +29,7 @@
 <script>
   
 window.c = function() {
-    html2canvas(document.getElementById("cam"), {
+    html2canvas(document.getElementById("1"), {
         onrendered: function (canvas) {
             document.body.appendChild(canvas);
         },
