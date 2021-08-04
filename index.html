@@ -1,36 +1,30 @@
 https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css
 <h1> Photobooth </h1>
-<iframe id="test"
+
+<iframe id="cam"
     title="Inline Frame Example"
     width="800"
     height="600"
     src="https://toffee888.github.io/AR/">
     allow="camera *;microphone *"
 </iframe>
+    
 <br>
+
 <button onclick="ss()">
     Foto
 </button>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
+
 <script>
- function ss(){
-const capture = async () => {
-  const canvas = document.createElement("canvas");
-  const context = canvas.getContext("2d");
-  const video = document.createElement("video");
-
-  try {
-    const captureStream = await navigator.mediaDevices.getDisplayMedia();
-    video.srcObject = captureStream;
-    context.drawImage(video, 0, 0, window.width, window.height);
-    const frame = canvas.toDataURL("image/png");
-    captureStream.getTracks().forEach(track => track.stop());
-    window.location.href = frame;
-  } catch (err) {
-    console.error("Error: " + err);
-  }
-};
-
-capture();
+    
+function ss(){
+     
+var canvas = document.getElementById("cam");
+canvas.toBlob(function(blob) {
+    saveAs(blob, "pretty image.png");
+});
  }
+    
 </script>
