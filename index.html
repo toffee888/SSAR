@@ -29,7 +29,7 @@
 <script>
   
   function c() {
-  let p = document.getElementById("cam");
+  let canvas = document.getElementById("cam");
   let image = new Image();
   image.src = canvas.toDataURL("image/jpeg", 1.0);
   saveAs(image, "hasil.png");
