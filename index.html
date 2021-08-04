@@ -24,9 +24,6 @@
   <div align="center">
 <button type="button" onclick="c()" class="btn btn-success" style="height:300px;width:1000px"> <p style="font-size:80px"> Foto </p> </button>
   </div>
-  <div id="capture" style="padding: 10px; background: #f5da55">
-    <h4 style="color: #000; ">Hello world!</h4>
-</div>
 
 
 <script>
@@ -42,11 +39,4 @@
   saveAs(image, "hasil.png");
 }
   
-  function c() {
-  let canvas = document.getElementById("cam");
-  let image = new Image();
-  image.src = canvas.toDataURL("image/jpeg", 1.0);
-  saveAs(image, "hasil.png");
-}
-    
 </script>
