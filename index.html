@@ -1,15 +1,29 @@
 <html>
     
 <head>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
     
 <script>
     window.onload = function () {
       document
         .querySelector(".button")
         .addEventListener("click", function () {
-           document.querySelector('a-scene').components.screenshot.capture('perspective');
+          
+        html2canvas(document.querySelector("#capture")).then(canvas => { 
+        var dataURL = canvas.toDataURL( "image/png" );
+        var data = atob( dataURL.substring( "data:image/png;base64,".length ) ),
+        asArray = new Uint8Array(data.length);
+
+        for( var i = 0, len = data.length; i < len; ++i ) {
+            asArray[i] = data.charCodeAt(i);    
+        }
+
+        var blob = new Blob( [ asArray.buffer ], {type: "image/png"} );
+        saveAs(blob, "photo.png");
+    });
         });
     };
+    
   </script>
     
 </head>
@@ -22,7 +36,7 @@
     
 <br>
     
-<div align="center">
+<div align="center" id="capture">
 <iframe
     width="100%"
     height="90%"
