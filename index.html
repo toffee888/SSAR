@@ -1,21 +1,23 @@
 <html>
     
 <head>
-<style>
-aside {
-  width: 30%;
-  float: bottom;
-  background-color: black;
-}
-</style>
+    
+<script>
+    window.onload = function () {
+      document
+        .querySelector(".button")
+        .addEventListener("click", function () {
+          alert("Hi there!");
+        });
+    };
+  </script>
+    
 </head>
 
 <body>
 
 <div align="center">
-<aside>
-<button onclick="ss()">Screenshot</button>
-</aside>
+<button class="button">Photo</button>
 </div>
 
 <br>
@@ -31,12 +33,6 @@ aside {
 
 <br>
     
-<script>
-  
-function ss() {
-document.querySelector('a-frame').components.screenshot.capture('perspective');
-}
-  
-</script>
+
 </body>
 </html>
