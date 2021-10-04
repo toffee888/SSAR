@@ -7,7 +7,7 @@
       document
         .querySelector(".button")
         .addEventListener("click", function () {
-          alert("Hi there!");
+           document.querySelector('a-scene').components.screenshot.capture('perspective');
         });
     };
   </script>
@@ -15,10 +15,6 @@
 </head>
 
 <body>
-
-<div align="center">
-<button class="button">Photo</button>
-</div>
 
 <br>
     
@@ -32,7 +28,11 @@
 </div>
 
 <br>
-    
+
+<div align="center">
+<button class="button">Photo</button>
+</div>
+
 
 </body>
 </html>
